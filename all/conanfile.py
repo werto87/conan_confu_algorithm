@@ -1,39 +1,26 @@
-from conans import ConanFile, tools
-from conans.tools import check_min_cppstd
+from conan import ConanFile
+from conan.errors import ConanInvalidConfiguration
+from conan.tools.build import check_min_cppstd
+from conan.tools.files import copy, get
+from conan.tools.layout import basic_layout
+from conan.tools.microsoft import is_msvc
+from conan.tools.scm import Version
 import os
 
 
-class ConfuJson(ConanFile):
-    name = "confu_json"
-    homepage = "https://github.com/werto87/confu_json"
-    description = "uses boost::fusion to help with serialization; json <-> user defined type"
-    topics = ("json parse", "serialization", "user defined type")
+class ConfuAlgorithm(ConanFile):
+    name = "confu_algorithm"
     license = "BSL-1.0"
-    url = "https://github.com/conan-io/conan-center-index"
-    settings = "compiler"
+    package_type = "header-library"
+    settings = "os", "arch", "compiler", "build_type"
     no_copy_source = True
 
-    @property
-    def _source_subfolder(self):
-        return "source_subfolder"
-
-    def configure(self):
-        if self.settings.compiler.cppstd:
-            check_min_cppstd(self, "20")
-        self.options["boost"].header_only = True
-
-    def requirements(self):
-        self.requires("boost/1.76.0")
 
     def source(self):
-        tools.get(**self.conan_data["sources"][self.version])
-        extracted_dir = self.name + "-" + self.version
-        os.rename(extracted_dir, self._source_subfolder)
+        get(self, **self.conan_data["sources"][self.version], strip_root=True)
+
 
     def package(self):
-        # This should lead to an Include path like #include "include_folder/IncludeFile.hxx"
-        self.copy("*.h*", dst="include/confu_json",
-                  src="source_subfolder/confu_json")
+        copy(self, "*.h*", src=os.path.join(self.source_folder, "confu_algorithm"),
+             dst=os.path.join(self.package_folder, "include", "confu_algorithm"))
 
-    def package_id(self):
-        self.info.header_only()
