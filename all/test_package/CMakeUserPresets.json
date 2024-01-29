@@ -1,9 +1,0 @@
-{
-    "version": 4,
-    "vendor": {
-        "conan": {}
-    },
-    "include": [
-        "/home/walde/CLionProjects/conan_confu_algorithm/all/test_package/build/gcc-13-x86_64-gnu20-release/generators/CMakePresets.json"
-    ]
-}

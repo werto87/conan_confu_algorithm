@@ -2,3 +2,6 @@ sources:
   0.0.0:
     url: https://github.com/werto87/confu_algorithm/archive/refs/tags/v0.0.0.zip
     sha256: 7ec9e63f645959ddcd26d2756642497c91f9312e0484aedd789f0b3dd3ead085
+  0.0.1:
+    url: https://github.com/werto87/confu_algorithm/archive/refs/tags/v0.0.1.zip
+    sha256: 7d7cc2038da5f0b67d0ee7e1c136a2f75f0b0658f69145bab6d2c009f298ac8f
