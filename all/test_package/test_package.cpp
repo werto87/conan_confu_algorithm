@@ -14,7 +14,7 @@ main ()
   auto result = confu_algorithm::createChainViews (nums.cbegin (), nums.cend (), [] (auto begin,auto end) {
     auto const &lastItem = *(end - 1);
     auto const &secondLastItem = *(end - 2);
-    return lastItem == secondLastItem;
+  return lastItem == secondLastItem;
   });
   for (auto sequence : result)
   {
