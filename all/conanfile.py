@@ -1,11 +1,9 @@
 from conan import ConanFile
-<<<<<<< HEAD
 from conan.tools.files import copy, get
 import os
-=======
 from conan.tools.cmake import CMake, cmake_layout
 from conan.tools.files import get
->>>>>>> 7dbcc5c (new version)
+
 
 
 class ConfuAlgorithm(ConanFile):
@@ -21,11 +19,10 @@ class ConfuAlgorithm(ConanFile):
     def requirements(self):
         self.requires("boost/1.84.0")
 
-<<<<<<< HEAD
     def package(self):
         copy(self, "*.h*", src=os.path.join(self.source_folder, "confu_algorithm"),
              dst=os.path.join(self.package_folder, "include", "confu_algorithm"))
-=======
+
     def configure(self):
         self.options["boost"].header_only = True
 
@@ -40,4 +37,4 @@ class ConfuAlgorithm(ConanFile):
         cmake = CMake(self)
         cmake.configure()
         cmake.install()
->>>>>>> 7dbcc5c (new version)
+
