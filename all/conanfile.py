@@ -23,11 +23,8 @@ class ConfuAlgorithm(ConanFile):
         copy(self, "*.h*", src=os.path.join(self.source_folder, "confu_algorithm"),
              dst=os.path.join(self.package_folder, "include", "confu_algorithm"))
 
-    def configure(self):
-        self.options["boost"].header_only = True
-
     def requirements(self):
-        self.requires("boost/1.84.0")
+        self.requires("boost/1.85.0")
 
 
     def layout(self):
@@ -38,3 +35,5 @@ class ConfuAlgorithm(ConanFile):
         cmake.configure()
         cmake.install()
 
+    def package_info(self):
+        self.cpp_info.components[self.name].requires = ["boost::headers"]
