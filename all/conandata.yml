@@ -1,7 +1,4 @@
 sources:
-  1.0.1:
-    url: https://github.com/werto87/confu_algorithm/archive/refs/tags/v1.0.1.zip
-    sha256: b873a75d7336ed05a8c3105888b4cac166d9f2132d385b15b0c2580c958c3128
-  1.1.1:
-    url: https://github.com/werto87/confu_algorithm/archive/refs/tags/v1.1.1.zip
-    sha256: daa20e6c87563462770631fadb3f0bd5864a106b19c77c887f7a16d43f740ff8
+  1.2.0:
+    url: https://github.com/werto87/confu_algorithm/archive/refs/tags/v1.2.0.zip
+    sha256: fcfe01be8ea52f8c53c87e3e3174c65a89a21cd399127b6539137531944adb63
