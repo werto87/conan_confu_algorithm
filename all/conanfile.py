@@ -17,7 +17,7 @@ class ConfuAlgorithm(ConanFile):
         get(self, **self.conan_data["sources"][self.version], strip_root=True)
 
     def requirements(self):
-        self.requires("boost/1.85.0")
+        self.requires("boost/1.86.0")
 
     def layout(self):
         cmake_layout(self, src_folder=self.name+"-"+str(self.version))
